@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body {
+      margin: unset;
+      background-color:hsl(0, 0%, 94%);
+    }
+
+    h2{
+      margin: unset;
+    }
+
+    p{
+      margin-top: unset;
+    }
+
+    .poppins-400i{
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .poppins-700{
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    .poppins-800i{
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: 3.5vw;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center; 
+      align-items: center;    
+      background-color:hsl(0, 0%, 94%);
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .flex-container > div{
+      background: hsl(0, 0%, 100%);
+      border-radius: 5% 5% 35% 5%;
+      padding: 8px;
+     }
+
+     .age-cal-card {
+      display: flex;
+      justify-content: flex-start; 
+      align-items: flex-start; 
+      flex-direction: column;  
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .age-cal-card > div{
+      padding: 8px;
+    }
+
+    .input-boxes {
+      display: flex;
+      justify-content: flex-start; 
+      align-items: flex-start;    
+      height: 100%;
+      padding: 0 15px;
+      gap: 5px;
+    }
+
+    .input-boxes > div{
+      padding: 8px;
+    }
+
+    .divider-button {
+      display: flex;
+      justify-content: space-between;    
+      height: 100%;
+      padding: 0 15px;
+      gap: 5px;
+    }
+
+    .divider-button > div{
+      padding: 8px;
+    }
+
+    .cal-btn{
+      background-color: hsl(259, 100%, 65%);
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      display: block;
+      cursor: pointer;
+    }
+
+    .cal-btn:hover{
+      background-color: hsl(0, 0%, 0%);
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      display: block;
+      cursor: pointer;
+    }
+
+    .divider{
+   	border-top: 1px solid hsl(0, 0%, 86%);
+    width: 100%;
+    }
+
+    input[type=number] {
+      width: 120px;
+      margin: auto;
+      outline: none;
+      min-height: 50px;
+      border: 2px solid hsl(0, 0%, 86%);
+      padding: 12px;
+      background-color: #f7f7f7;
+      border-radius: 10px;
+      color:  hsl(0, 0%, 8%);
+      font-size: 32px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number]:focus{
+      border: 2px solid hsl(259, 100%, 65%);
+    }
+
+    .title{
+      font-size: 18px;
+      color:  hsl(0, 1%, 44%);
+    }
+
+    .purple-dash{
+      color: hsl(259, 100%, 65%);
+    }
+
+    .div-line-divider{
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+ 
+
+  <div class="flex-container">
+   
+    <div class="age-cal-card">
+      <form>
+        <div class="input-boxes">
+          <div class="item1">
+            <p class="title poppins-700">DATE</p>
+            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="date" id="date" placeholder="DD" class="poppins-700" required="required" minlength="1" maxlength="2" />
+          </div>
+          <div class="item2">
+            <p class="title poppins-700">MONTH</p>
+            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="month" id="month" placeholder="MM" class="poppins-700" required="required" minlength="1" maxlength="2" />
+          </div>
+          <div class="item3">
+            <p class="title poppins-700">YEAR</p>
+            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="year" id="year" placeholder="YYYY" class="poppins-700" required="required" minlength="4" maxlength="4" />
+          </div>
+        </div>
+        <div class="divider-button">
+          <div class="div-line-divider">
+            <hr class="divider">
+          </div>
+          <div class="item2">
+            <a name="submit" value="Submit" onclick="age()" class="cal-btn">
+            <img src="assets/images/icon-arrow.svg" alt=""> </a>
+          </div>
+        </div>
+
+        <div id="age"></div>
+      </form>
+      <div class="item3">
+        <h2 class="poppins-800i"> <span class="year purple-dash" id="cal-year"> --</span> years</h2>
+        <h2 class="poppins-800i"> <span class="month purple-dash" id="cal-month"> --</span> months</h2>
+        <h2 class="poppins-800i"> <span class="day purple-dash" id="cal-day"> --</span> days</h2>
+      </div>
+    </div>
+
+</div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">k-t</a>.
+  </div>
+
+  
+
+
+  <script type="text/javascript">
+    function age() {
+    var d1 = document.getElementById('date').value;
+    var m1 = document.getElementById('month').value;
+    var y1 = document.getElementById('year').value;
+  
+    var date = new Date();
+    var d2 = date.getDate();
+    var m2 = 1 + date.getMonth();
+    var y2 = date.getFullYear();
+    var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  
+    if(d1 > d2){
+      d2 = d2 + month[m2 - 1];
+      m2 = m2 - 1;
+    }
+    if(m1 > m2){
+      m2 = m2 + 12;
+      y2 = y2 - 1;
+    }
+    var d = d2 - d1;
+    var m = m2 - m1;
+    var y = y2 - y1;
+  
+    document.getElementById('cal-year').innerHTML = +y;
+    document.getElementById('cal-month').innerHTML = +m;
+    document.getElementById('cal-day').innerHTML = +d;
+  }
+  </script>
+  <body>
+  <html>
+  
+</body>
+</html>
