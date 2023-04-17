@@ -1,0 +1,170 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    margin: unset;
+    background-color:hsl(0, 0%, 94%);
+  }
+
+  h2{
+    margin: unset;
+  }
+
+  p{
+    margin-top: unset;
+  }
+
+  .poppins-400i{
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .poppins-700{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  .poppins-800i{
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 3.5vw;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    background-color:hsl(0, 0%, 94%);
+    height: 100%;
+    padding: 15px;
+    gap: 5px;
+  }
+
+  .flex-container > div{
+    background: hsl(0, 0%, 100%);
+    border-radius: 5% 5% 35% 5%;
+    padding: 8px;
+   }
+
+   .age-cal-card {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    flex-direction: column;  
+    height: 100%;
+    padding: 15px;
+    gap: 5px;
+  }
+
+  .age-cal-card > div{
+    padding: 8px;
+  }
+
+  .input-boxes {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;    
+    height: 100%;
+    padding: 0 15px;
+    gap: 5px;
+  }
+
+  .input-boxes > div{
+    padding: 8px;
+  }
+
+  .divider-button {
+    display: flex;
+    justify-content: space-between;    
+    height: 100%;
+    padding: 0 15px;
+    gap: 5px;
+  }
+
+  .divider-button > div{
+    padding: 8px;
+  }
+
+  .cal-btn{
+    background-color: hsl(259, 100%, 65%);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+  }
+
+  .cal-btn:hover{
+    background-color: hsl(0, 0%, 0%);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+  }
+
+  .divider{
+     border-top: 1px solid hsl(0, 0%, 86%);
+  width: 100%;
+  }
+
+  input[type=number] {
+    width: 120px;
+    margin: auto;
+    outline: none;
+    min-height: 50px;
+    border: 2px solid hsl(0, 0%, 86%);
+    padding: 12px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    color:  hsl(0, 0%, 8%);
+    font-size: 32px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  input[type=number]:focus{
+    border: 2px solid hsl(259, 100%, 65%);
+  }
+
+  .title{
+    font-size: 18px;
+    color:  hsl(0, 1%, 44%);
+  }
+
+  .purple-dash{
+    color: hsl(259, 100%, 65%);
+  }
+
+  .div-line-divider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-error{
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    color: hsl(0, 100%, 50%);
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+
+  @media only screen and (max-width: 425px) {
+    input[type=number] {
+      width: 60px;
+      font-size: 20px;
+    }
+
+    .poppins-800i {
+      font-size: 45px;
+    }
+  }
